@@ -15,7 +15,7 @@ RSpec.describe Tournament, :type => :model do
 
     describe "after save" do
       before {@tournament.save}
-      its(:grabbable) { should be_truthy }
+      its(:grabbable) { should be_falsey }
     end
 
   end
