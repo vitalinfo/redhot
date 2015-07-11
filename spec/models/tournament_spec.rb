@@ -7,7 +7,7 @@ RSpec.describe Tournament, :type => :model do
 
   it_behaves_like "model: main attributes",
                   [{name: :name,           type: :string,  presence: true, maximum: 255},
-                   {name: :league_id,      type: :integer, presence: true},
+                   {name: :league_id,      type: :integer, presence: true, uniq: true},
                    {name: :description,    type: :string},
                    {name: :tournament_url, type: :string},
                    {name: :grabbable,      type: :boolean}] do
