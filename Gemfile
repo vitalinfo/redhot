@@ -36,7 +36,7 @@ gem 'jquery-rails', '3.1.1'
 gem 'turbolinks', '2.2.2'
 gem 'jbuilder', '2.1.3'
 
-gem 'rest_client'
+gem 'rest-client'
 gem 'daemons-rails'
 
 gem 'minitest'
