@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  reconnect: true
+  username: postgres
+  password: qwerty
+  port: 5432
+
+development:
+  <<: *default
+  database: redhot
+
+test: &test
+  <<: *default
+  database: redhot_test
+
+staging:
+  <<: *default
+  database: redhot
+
+production:
+  <<: *default
+  database: redhot
