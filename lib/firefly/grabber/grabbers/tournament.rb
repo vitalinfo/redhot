@@ -9,7 +9,7 @@ module Firefly
             return unless result && result[:leagues] && result[:leagues].is_a?(Array)
             result[:leagues].each do |league|
               ::Tournament.create(name:           league[:name],
-                                  league_id:      league[:leagueid],
+                                  api_league_id:      league[:leagueid],
                                   description:    league[:description],
                                   tournament_url: league[:tournament_url])
             end

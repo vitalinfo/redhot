@@ -7,10 +7,11 @@ RSpec.describe Tournament, :type => :model do
 
   it_behaves_like "model: main attributes",
                   [{name: :name,           type: :string,  presence: true, maximum: 255},
-                   {name: :league_id,      type: :integer, presence: true, uniq: true},
+                   {name: :api_league_id,  type: :integer, presence: true, uniq: true},
                    {name: :description,    type: :string},
                    {name: :tournament_url, type: :string},
-                   {name: :grabbable,      type: :boolean}] do
+                   {name: :grabbable,      type: :boolean},
+                   {name: :matches,        type: :object}] do
     let(:record) { @tournament }
 
     describe "after save" do
