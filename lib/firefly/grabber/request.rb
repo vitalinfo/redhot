@@ -12,11 +12,11 @@ module Firefly
           @client ||= RestClient::Resource.new Firefly::Constants::Grabber::BASE_URI
         end
 
-        def _get(path)
+        def _get(path, params)
           response = nil
           t = Firefly::TimeBenchmark.time do
             begin
-              response = client[path].get(params: {key: config["api_key"]})
+              response = client[path].get(params: params.merge({key: config["api_key"]}))
             rescue
               response = {exception: $!}.to_json
             end
@@ -27,8 +27,8 @@ module Firefly
 
         public
 
-        def get(path)
-          Firefly::Grabber::Response.new(_get(path))
+        def get(path, params = {})
+          Firefly::Grabber::Response.new(_get(path, params))
         end
 
       end

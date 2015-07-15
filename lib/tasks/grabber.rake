@@ -10,7 +10,10 @@ namespace :grabber do
 
     Firefly.init_config({"grabber" => {"api_key" => api_key}})
     Firefly::Grabber::Grabbers::Tournament.grab!
+    Firefly::Grabber::Grabbers::Match.grab_history!
     Firefly::Grabber::Grabbers::Match.grab_live!
+    Firefly::Grabber::Grabbers::Match.scheduled_live!
+    # Firefly::Grabber::Grabbers::MatchDetail.grab!
 
   end
 
